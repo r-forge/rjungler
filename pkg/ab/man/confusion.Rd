@@ -5,38 +5,49 @@
 rjungle
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+In case of regression tasks confusion returns the total sum of squares (SS), 
+the SS of residuals and predictor, the prediction accuracy estimate and the 
+and the error estimate.
 }
 \usage{
-confusion(rj, confusionTable = FALSE, ...)
+confusion(rj, printOnly = FALSE, confusionTable = FALSE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{rj}{
-%%     ~~Describe \code{rj} here~~
+    An object of class \code{rjungle}.
+}
+  \item{printOnly}{
+    If \code{TRUE}, confusion information is printed to the screen 
+    when rjungle was used for regression tasks. If \code{FALSE} (default), 
+    A \code{vector} with 5 elemnts is returned.
+  
 }
   \item{confusionTable}{
-%%     ~~Describe \code{confusionTable} here~~
+    The confusion table in case of classification tasks.
+    
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+    Further arguments; not used at the moment.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+ This version of the \code{confusion} function was modified by Andreas Bender
+ for purposes of his bachelor thesis.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
+    For regression tasks either \code{NULL} or a \code{vector} with 
+    elements \code{SS_Residual}, \code{SS_Total}, 
+    \code{SS_Predictor}=\code{SS_Total - SS_Residual},
+    \code{Accuracy Estimate}=\code{SS_Predictor/SS_Total} 
+    and \code{Error Estimate}=\code{1 - Accuracy Estimate}
 %% ...
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Daniel F. Schwarz with modifications by Andreas Bender
 }
 \note{
 %%  ~~further notes~~
@@ -45,40 +56,15 @@ confusion(rj, confusionTable = FALSE, ...)
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{rjungle}}, \code{\link{importance}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function(rj,
-		confusionTable = FALSE, #if TRUE then show file *.confusion2
-		...) {
-	if (!inherits(rj, "rjungle"))
-		stop("data argument should be rjungle-class")
-	fileName = paste(rj@tmpFile, ".confusion", sep = "")
-	whatHeader = TRUE
-	if (rj@treeType != 3 & rj@treeType != 4)  {
-		if (confusionTable) {
-			whatHeader = FALSE
-			fileName = paste(rj@tmpFile, ".confusion2", sep = "")
-		}
-	}
-	if (!file.exists(fileName))
-		stop(paste("no importance file exists.", fileName))
-	ret = NULL
-	if (whatHeader){
-		con <- file(fileName, "r", blocking = FALSE)
-		ret2 = readLines(con) # empty
-		close(con)
-		cat(paste(ret2, "\n"))
-	} else
-		ret = read.table(fileName, header = TRUE)
-	return(ret)
-  }
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ confusion}% __ONLY ONE__ keyword per line
+\keyword{confusion}% __ONLY ONE__ keyword per line

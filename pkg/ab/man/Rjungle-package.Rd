@@ -1,12 +1,12 @@
-\name{rjungleR-package}
-\alias{rjungleR-package}
-\alias{rjungle}
+\name{Rjungle-package}
+\alias{Rjungle-package}
+\alias{Rjungle}
 \docType{package}
 \title{
-rjungleR
+Rjungle
 }
 \description{
-More about what it does (maybe more than one line)
+Performs RandomJungle from within R.
 }
 \details{
 \tabular{ll}{
@@ -20,13 +20,13 @@ LazyLoad: \tab yes\cr
 
 }
 \author{
-
+Daniel Schwarz with minor modifications by Andreas Bender
 }
 \references{
+www.randomjungle.org
 }
 \keyword{ package }
 \seealso{
-
 \code{\link{rjungle}}, \code{\link{importance}}
 }
 \examples{

@@ -24,13 +24,17 @@ importance(x, ...)
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-A \code{\link{data.frame}
+ A \code{data.frame}. If \code{\link{rjungle}} was called with \code{imp=2}, 
+ rows represent the input variables ordered by index and columns contain 
+ Gini index as well as Raw-, Breiman-, Liaw- and Meng-Score, SDs for the 
+ Breiman- and Meng-Score, variable names and the number of trees in which the 
+ according variable was used for splitting.
 }
 \references{
-%% ~put references to the literature/web site here ~
+\url{www.randomjungle.org
 }
 \author{
-Daniel Schwarz
+Daniel Schwarz with modifications by Andreas Bender
 }
 \note{
 %%  ~~further notes~~
@@ -39,16 +43,15 @@ Daniel Schwarz
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
- \code{\link{rjungle}}, \code{\link{predict}}
+ \code{\link{rjungle}}, \code{\link{confusion}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function(x, ...)  UseMethod("importance")
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ importance}
+\keyword{importance}

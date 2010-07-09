@@ -138,7 +138,6 @@ rjungle(
   Further arguments to be passed to the \code{\link{system}} call.
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
 }
 \value{
 Returns an object of class \code{rjungle}. Contains the setting used
@@ -146,9 +145,9 @@ in the call of \code{rjungle} function and the path to the temporary files
 produced by \code{rjungle}.
 }
 \references{
-www.randomjungle.org/rjungle
+www.randomjungle.org
 }
-\author{
+\author{ Daniel F. Schwarz with modifications by Andreas Bender
 }
 \note{
 %%  ~~further notes~~
