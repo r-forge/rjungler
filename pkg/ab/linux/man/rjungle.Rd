@@ -16,7 +16,7 @@ rjungle(
 		mtry = NULL,
 		treeType = 1,
 		importance = 1, 
-		replace = TRUE,
+		replace = FALSE,
 		proximity = FALSE,
 		keepJungle = TRUE,
 		nthread = 0, 
@@ -76,9 +76,9 @@ rjungle(
     \code{5}: Meng-Score
 }
  \item{replace}{
-      A \code{\link{logical}}. If \code{TRUE}, the set of variables used for 
-      growing a tree is drawn with replacement, otherwise without replacement.
-      Defaults to \code{TRUE}.
+      A \code{\link{logical}}. If \code{TRUE}, the set of variables to choose
+      the split from is drawn with replacement, otherwise without replacement.
+      Defaults to \code{FALSE}.
 }
   \item{proximity}{
     A \code{\link{logical}}, indicates whether proximites should be computed. 
@@ -95,8 +95,8 @@ rjungle(
   
 }
   \item{seed}{
-  A \code{\link{numeric}} specifing the seed to be used for computation. Reasures
-  reproducibility. Defaults to \code{123}.
+  A \code{\link{numeric}} specifing the seed to be used for computation.  
+  Defaults to \code{123}.
 }
   \item{fileNameOut}{
   A \code{character} specifing the prefix to the files produced by rjungle.
@@ -137,8 +137,8 @@ rjungle(
   \item{\dots}{
   Further arguments to be passed to the \code{\link{system}} call.
 }
+}
 \details{
-%%  ~~ If necessary, more details than the description above ~~
 }
 \value{
 Returns an object of class \code{rjungle}. Contains the setting used
@@ -146,22 +146,17 @@ in the call of \code{rjungle} function and the path to the temporary files
 produced by \code{rjungle}.
 }
 \references{
-www.randomjungle.org/rjungle
+\url{www.randomjungle.org}
 }
-\author{
+\author{ Daniel F. Schwarz with modifications by Andreas Bender
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{importance}}, \code{\link{predict}}
+\code{\link{importance}}, \code{\link{confusion}}
 }
-\examples{
-
-
 }
 \keyword{ ~Random Jungle }
 \keyword{ ~rjungle}% __ONLY ONE__ keyword per line
