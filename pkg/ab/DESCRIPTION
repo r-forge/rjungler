@@ -1,0 +1,10 @@
+Package: Rjungle
+Version: 0.1-3
+Date: 2010-09-07
+Title: Random Jungle in R
+Author: Daniel F Schwarz 
+Maintainer: Daniel F Schwarz <daniel@randomjungle.com>
+Depends: R (>= 2.9.2), methods, MASS
+Description: Generalised Implementation of Random Forest.
+License: GPL (>= 2)
+URL: http://www.randomjungle.org
