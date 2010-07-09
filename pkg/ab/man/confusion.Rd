@@ -31,40 +31,29 @@ confusion(rj, printOnly = FALSE, confusionTable = FALSE, ...)
     Further arguments; not used at the moment.
 }
 }
-\details{
- This version of the \code{confusion} function was modified by Andreas Bender
- for purposes of his bachelor thesis.
-}
+
 \value{
     For regression tasks either \code{NULL} or a \code{vector} with 
-    elements \code{SS_Residual}, \code{SS_Total}, 
-    \code{SS_Predictor}=\code{SS_Total - SS_Residual},
-    \code{Accuracy Estimate}=\code{SS_Predictor/SS_Total} 
-    and \code{Error Estimate}=\code{1 - Accuracy Estimate}
+    elements SS_Residual, SS_Total,  
+    SS_Predictor = SS_Total - SS_Residual,
+    Accuracy Estimate = SS_Predictor/SS_Total 
+    and Error Estimate = 1 - Accuracy Estimate
 %% ...
 }
 \references{
-%% ~put references to the literature/web site here ~
+\url{www.randomjungle.org}
 }
 \author{
 Daniel F. Schwarz with modifications by Andreas Bender
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{rjungle}}, \code{\link{importance}}
 }
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
-
-}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{confusion}% __ONLY ONE__ keyword per line

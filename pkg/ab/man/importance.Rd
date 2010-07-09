@@ -5,8 +5,8 @@
 importance
 }
 \description{
-Loads the importance file(s) from the directorie which the \code{rjungle}
-output was written to.
+ Reads importance information from the files produced by the 
+ \code{\link{rjungle}} function.
 }
 \usage{
 importance(x, ...)
@@ -20,9 +20,7 @@ importance(x, ...)
 %%     ~~Describe \code{\dots} here~~
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
  A \code{data.frame}. If \code{\link{rjungle}} was called with \code{imp=2}, 
  rows represent the input variables ordered by index and columns contain 
@@ -31,27 +29,19 @@ importance(x, ...)
  according variable was used for splitting.
 }
 \references{
-\url{www.randomjungle.org
+\url{www.randomjungle.org}
 }
 \author{
 Daniel Schwarz with modifications by Andreas Bender
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
  \code{\link{rjungle}}, \code{\link{confusion}}
 }
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
-
-}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{importance}
