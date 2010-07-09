@@ -23,7 +23,7 @@ rjungle <- function(
 		mtry = NULL,
 		treeType = 1,
 		importance = 1, # default: GINI-Index
-		replace = TRUE,
+		replace = FALSE,
 		proximity = FALSE,
 		keepJungle = TRUE,
 		nthread = 0, # maximal number
@@ -124,7 +124,7 @@ rjungle <- function(
 					"-z", seed,
 					"-i", importance,
 					"-U", nthread,
-					if (replace) "-u",
+					if (!replace) "-u",
 					if (proximity) "-s",
 					if (keepJungle) "-w2",
 					if (balanceData) "-W",

@@ -16,7 +16,7 @@
 
 library(methods)
 
-confusion <- function(rj,
+confusion <- function(rj, printOnly=FALSE,
 		confusionTable = FALSE, #if TRUE then show file *.confusion2
 		...) {
 	if (!inherits(rj, "rjungle"))
@@ -42,11 +42,24 @@ confusion <- function(rj,
 		con <- file(fileName, "r", blocking = FALSE)
 		ret2 = readLines(con) # empty
 		close(con)
-
-		cat(paste(ret2, "\n"))
+		if(!printOnly){
+      confVec<-numeric(5)
+		  splitVec<-c(2,2,2,4,3)
+		  for(i in 4:8){
+		    str1<-unlist(strsplit(ret2[i], split='='))[splitVec[i-3]]
+		    str2<-unlist(strsplit(str1, split=' '))[2]
+		    confVec[i-3]<-as.numeric(str2)
+      }
+      names(confVec)<-c('SS_Residual', 'SS_Total', 'SS_Predictor', 
+                        'Accuracy Estimate', 'Error Estimate')
+      
+      return(confVec)
+    }
+    else cat(paste(ret2, "\n"))
 
 	} else
 		ret = read.table(fileName, header = TRUE)
 
 	return(ret)
 }
+

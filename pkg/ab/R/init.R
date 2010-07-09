@@ -17,8 +17,8 @@
 
 library(methods)
 
-RJ__EXECNAME<-paste(system.file('exec/rjungle.exe', package='rjungleR'), '', sep='')
-RJS__EXECNAME = paste(system.file('exec/rjunglesparse.exe', package='rjungleR'), "", sep = "")
+RJ__EXECNAME<-paste(system.file('exec/rjungle.exe', package='Rjungle'), '', sep='')
+RJS__EXECNAME = paste(system.file('exec/rjunglesparse.exe', package='Rjungle'), '', sep = '')
 
 RJ__MSG1 = "Regression with categorical predictor variables. Factors are converted to integers."
 RJ__MSG2 = "No proximity was calculated. Try rjungle(..., proximity = TRUE)"
