@@ -5,7 +5,7 @@
 rjungle
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Calls the rjungle C++ routines and grows a Random Jungle.
 }
 \usage{
 rjungle(
